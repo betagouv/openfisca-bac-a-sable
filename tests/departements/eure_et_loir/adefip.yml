@@ -24,7 +24,7 @@
        parents:
        - cas_reel_1
        enfants: [enfant_1, enfant_2, enfant_3]
-       rsa: 
+       rsa:
         2020-02: 333.65
         2019-12: 704.65
     menage:
@@ -58,7 +58,7 @@
        parents:
        - cas_reel_2
        enfants: [enfant_1, enfant_2, enfant_3]
-       rsa: 
+       rsa:
         2019-11: 759.42
     menage:
       personne_de_reference:
@@ -73,7 +73,10 @@
     eure_et_loir_eligibilite_residence: true
     eure_et_loir_eligibilite_adefip: true
 
-- name: Cas réel 3
+
+- name: Cas réel 3. AdéFIP non attribuée. \
+    A déjà bénéficié de l'AdéFIP en mars 2019 et formation 2019-12 à 2020-03 non qualifiante. \
+    Personne seule. Perçoit le RSA.
   period: 2020-02
   input:
     individus:
@@ -83,7 +86,8 @@
     famille:
        parents:
        - cas_reel_3
-       rsa: 705.27
+       rsa:
+        2020-01: 705.27
     menage:
       personne_de_reference:
       - cas_reel_3
@@ -95,12 +99,14 @@
     eure_et_loir_eligibilite_residence: true
     eure_et_loir_eligibilite_adefip: false
 
-- name: Cas réel 4
+- name: Cas réel 4. [400€ AdéFIP attribué.] \
+    En CDD de 3-6mois. En action d'insertionde 2019-12 à 04-2020. \
+    Personne seule. Perçoit le RSA.
   period: 2020-02
   input:
     individus:
       cas_reel_4:
-        date_naissance: '1986-09-01'
+        date_naissance: '1968-06-01'
       enfant_1:
         date_naissance: '2012-01-01'
       enfant_2:
@@ -111,7 +117,8 @@
        parents:
        - cas_reel_4
        enfants: [enfant_1, enfant_2, enfant_3]
-       rsa: 559.74
+       rsa:
+        2019-12: 559.74
     menage:
       personne_de_reference:
       - cas_reel_4
