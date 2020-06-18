@@ -6,31 +6,62 @@
     eure_et_loir_eligibilite_adefip: [false, true, false, false]
 
 - name: Cas réel 1
-  period: 2020-06
+  period: 2020-02
   input:
     individus:
       cas_reel_1:
         date_naissance: '1990-12-01'
-      personne_a_charge_1:
+      enfant_1:
         date_naissance: '2018-01-01'
-      personne_a_charge_2:
+      enfant_2:
         date_naissance: '2017-01-01'
-      personne_a_charge_3:
+      enfant_3:
         date_naissance: '2016-01-01'
     famille:
        parents:
        - cas_reel_1
-       enfants: [personne_a_charge_1, personne_a_charge_2, personne_a_charge_3]
+       enfants: [enfant_1, enfant_2, enfant_3]
        rsa: 704.65
     menage:
       personne_de_reference:
       - cas_reel_1
-      enfants: [personne_a_charge_1, personne_a_charge_2, personne_a_charge_3]
+      enfants: [enfant_1, enfant_2, enfant_3]
       depcom: 28400
     foyer_fiscal:
       declarants:
       - cas_reel_1
-      personnes_a_charge: [personne_a_charge_1, personne_a_charge_2, personne_a_charge_3]
+      personnes_a_charge: [enfant_1, enfant_2, enfant_3]
+  output:
+    eure_et_loir_eligibilite_residence: true
+    eure_et_loir_eligibilite_adefip: true
+
+
+- name: Cas réel 2
+  period: 2019-12
+  input:
+    individus:
+      cas_reel_1:
+        date_naissance: '1986-09-01'
+      enfant_1:
+        date_naissance: '2012-01-01'
+      enfant_2:
+        date_naissance: '2015-01-01'
+      enfant_3:
+        date_naissance: '2016-01-01'
+    famille:
+       parents:
+       - cas_reel_1
+       enfants: [enfant_1, enfant_2, enfant_3]
+       rsa: 759.42
+    menage:
+      personne_de_reference:
+      - cas_reel_1
+      enfants: [enfant_1, enfant_2, enfant_3]
+      depcom: 28100
+    foyer_fiscal:
+      declarants:
+      - cas_reel_1
+      personnes_a_charge: [enfant_1, enfant_2, enfant_3]
   output:
     eure_et_loir_eligibilite_residence: true
     eure_et_loir_eligibilite_adefip: true
