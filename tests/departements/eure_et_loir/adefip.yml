@@ -5,6 +5,7 @@
   output:
     eure_et_loir_eligibilite_adefip: [false, true, false, false]
 
+
 - name: Cas réel 1
   period: 2020-02
   input:
@@ -89,7 +90,7 @@
     eure_et_loir_eligibilite_adefip: false
 
 - name: Cas réel 4
-  period: 2019-12
+  period: 2020-02
   input:
     individus:
       cas_reel_4:
@@ -104,12 +105,12 @@
        parents:
        - cas_reel_4
        enfants: [enfant_1, enfant_2, enfant_3]
-       rsa: 759.42
+       rsa: 559.74
     menage:
       personne_de_reference:
       - cas_reel_4
       enfants: [enfant_1, enfant_2, enfant_3]
-      depcom: 28100
+      depcom: 28000
     foyer_fiscal:
       declarants:
       - cas_reel_4
