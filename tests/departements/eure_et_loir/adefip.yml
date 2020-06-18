@@ -6,7 +6,9 @@
     eure_et_loir_eligibilite_adefip: [false, true, false, false]
 
 
-- name: Cas réel 1
+- name: Cas réel 1. [500€ AdéFIP attribué.] \
+    En CDD plus de 6 mois, en action d'insertion de 2019-12 à 2020-03. \
+    Personne seule et trois enfants. Perçoit le RSA.
   period: 2020-02
   input:
     individus:
@@ -22,7 +24,9 @@
        parents:
        - cas_reel_1
        enfants: [enfant_1, enfant_2, enfant_3]
-       rsa: 704.65
+       rsa: 
+        2020-02: 333.65
+        2019-12: 704.65
     menage:
       personne_de_reference:
       - cas_reel_1
@@ -37,7 +41,8 @@
     eure_et_loir_eligibilite_adefip: true
 
 
-- name: Cas réel 2
+- name: Cas réel 2. [700€ AdéFIP attribué.] \
+    En création d'entreprise en 2019-11. En couple et 3 enfants. Perçoit le RSA.
   period: 2019-12
   input:
     individus:
@@ -53,7 +58,8 @@
        parents:
        - cas_reel_2
        enfants: [enfant_1, enfant_2, enfant_3]
-       rsa: 759.42
+       rsa: 
+        2019-11: 759.42
     menage:
       personne_de_reference:
       - cas_reel_2
