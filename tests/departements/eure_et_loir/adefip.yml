@@ -8,8 +8,29 @@
 - name: Cas réel 1
   period: 2020-06
   input:
-    date_naissance: '1990-12-01'
-    rsa: 704.65
-    eure_et_loir_eligibilite_residence: true
+    individus:
+      cas_reel_1:
+        date_naissance: '1990-12-01'
+      personne_a_charge_1:
+        date_naissance: '2018-01-01'
+      personne_a_charge_2:
+        date_naissance: '2017-01-01'
+      personne_a_charge_3:
+        date_naissance: '2016-01-01'
+    famille:
+       parents:
+       - cas_reel_1
+       enfants: [personne_a_charge_1, personne_a_charge_2, personne_a_charge_3]
+       rsa: 704.65
+    menage:
+      personne_de_reference:
+      - cas_reel_1
+      enfants: [personne_a_charge_1, personne_a_charge_2, personne_a_charge_3]
+      depcom: 28400
+    foyer_fiscal:
+      declarants:
+      - cas_reel_1
+      personnes_a_charge: [personne_a_charge_1, personne_a_charge_2, personne_a_charge_3]
   output:
+    eure_et_loir_eligibilite_residence: true
     eure_et_loir_eligibilite_adefip: true
