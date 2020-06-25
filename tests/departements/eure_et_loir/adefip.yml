@@ -82,7 +82,7 @@
     individus:
       cas_reel_3:
         date_naissance: '1988-08-01'
-        eure_et_loir_a_recu_adefip: true
+        eure_et_loir_adefip_versee: true
     famille:
        parents:
        - cas_reel_3
