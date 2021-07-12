@@ -1,0 +1,26 @@
+montant:
+  reference: https://www.hautsdefrance.fr/aide-au-permis-de-conduire/
+  description: Montant pour les hauts de france
+  values:
+    2020-01-20:
+      value: 1000
+
+age:
+  description: Age pour permis
+  reference: xx
+  minimum:
+    2020-01-20:
+      value: 18
+  maximum:
+    2020-01-20:
+      value: 30
+
+plafond_ressources:
+  description: Montant maximal des ressources de la famille pour bénéficier de la prise en charge de l'aide au permis
+  reference: xx
+  base_personne_autonome:
+    2020-01-20:
+      value: 28200
+  base_personne_couple:
+    2020-01-20:
+      value: 42250
