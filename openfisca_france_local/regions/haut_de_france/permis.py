@@ -20,20 +20,12 @@ class haut_de_france_aide_permis_eligibilite(Variable):
     definition_period = MONTH
 
     def formula(individu, period, parameters):
-
-        # Eligibilite age : 18 et 30 ans
         age = individu('age', period)
         criteres_age = parameters(period).regions.haut_de_france.aide_permis.age
         eligibilite_age = (criteres_age.minimum <= age) * (age <= criteres_age.maximum)
 
         depcom = individu.menage('depcom', period)
-        eligibilite_geographique = sum([startswith(depcom, code) for code in [b'60', b'59', b'02', b'62', b'80']])
-
-        activite = individu('activite', period)
-        contrat_de_travail_duree = individu('contrat_de_travail_duree', period)
-        stagiaire = individu('stagiaire', period)
-        # Situation : Formation, CDD<6 mois, intérim, demandeur d'emploi
-        eligibilite_situation = (activite == TypesActivite.chomeur) + (contrat_de_travail_duree == TypesContratDeTravailDuree.cdd) + stagiaire
+        eligibilite_geographique = sum([depcom == departementCode for departementCode in [b'60', b'59', b'02', b'62', b'80']])
 
         plafond_ressources = parameters(period).regions.haut_de_france.aide_permis.plafond_ressources
         rfr = individu.foyer_fiscal('rfr', period.this_year)
@@ -48,8 +40,7 @@ class haut_de_france_aide_permis_eligibilite(Variable):
             (statut_marital == TypesStatutMarital.celibataire) *
             plafond_ressources.base_personne_autonome >= max_(0, rfr / nbptr)
         )
-
-        return eligibilite_situation * eligibilite_age * eligibilite_geographique * (eligibilite_autonome + eligibilite_couple)
+        return eligibilite_age * eligibilite_geographique * (eligibilite_autonome + eligibilite_couple)
 
 
 class haut_de_france_aide_permis(Variable):
@@ -63,4 +54,6 @@ class haut_de_france_aide_permis(Variable):
 
     def formula(individu, period, parameters):
         eligibilite = individu("haut_de_france_aide_permis_eligibilite", period)
-        return eligibilite * 1000
+        montant = parameters(period).regions.haut_de_france.aide_permis.montant
+        breakpoint()
+        return eligibilite * montant
