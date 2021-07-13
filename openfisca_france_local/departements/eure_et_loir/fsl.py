@@ -134,12 +134,10 @@ class eure_et_loir_fsl_base_ressources(Variable):
         }
 
         famille_resources_names = {
-            'rsa_socle',
-            'rsa_socle_majore',
+            'rsa',
             'af',
             'asf',
             'paje',
-            'paje_cmg',
             'aeeh',
             'aide_logement',
             'aspa',
@@ -151,28 +149,31 @@ class eure_et_loir_fsl_base_ressources(Variable):
             'ars'
         }
 
-        menage_resources_mensuelles = sum([
+        resources_mensuelles_individus = sum([
             menage.members(resource, period)
             for resource in individu_resources_names
         ])
-        menage_resources_annuelles = sum([
+        resources_annuelles_individus = sum([
             menage.members(resource, period.this_year)
             for resource in individu_resources_annuelle_names
         ])
-        menage_resources_mensuelles_famille = sum([
+        resources_mensuelles_famille_members = sum([
             menage.members.famille(resource, period)
             for resource in famille_resources_names
         ])
-        menage_resources_annuelles_famille = sum([
-            menage.members.famille(resource, period.this_year) 
+        resources_annuelles_famille_members = sum([
+            menage.members.famille(resource, period.this_year)
             for resource in famille_resources_names_annuelles
         ])
 
+        # projette les ressources de la famille sur un individu quelconque pour éviter les doublons
+        selectionne_un_membre_par_groupe = menage.members.has_role(Menage.PERSONNE_DE_REFERENCE)
+
         menage_resources = menage.sum( 
-            menage_resources_mensuelles
-            + menage_resources_annuelles
-            + menage_resources_mensuelles_famille
-            + menage_resources_annuelles_famille
+            resources_mensuelles_individus
+            + (resources_annuelles_individus / 12)
+            + resources_mensuelles_famille_members * selectionne_un_membre_par_groupe
+            + (resources_annuelles_famille_members * selectionne_un_membre_par_groupe/ 12)
             )
 
         enfants_a_charge = menage.members('enfant_a_charge', period.this_year)
