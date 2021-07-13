@@ -47,7 +47,6 @@ class haut_de_france_aide_permis_eligibilite(Variable):
             (statut_marital == TypesStatutMarital.celibataire) *
             plafond_ressources.base_personne_autonome >= max_(0, rfr / nbptr)
         )
-        breakpoint()
         return eligibilite_age * eligibilite_geographique * eligibilite_situation * (eligibilite_autonome + eligibilite_couple)
 
 
