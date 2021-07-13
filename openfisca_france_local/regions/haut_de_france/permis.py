@@ -55,5 +55,4 @@ class haut_de_france_aide_permis(Variable):
     def formula(individu, period, parameters):
         eligibilite = individu("haut_de_france_aide_permis_eligibilite", period)
         montant = parameters(period).regions.haut_de_france.aide_permis.montant
-        breakpoint()
         return eligibilite * montant
