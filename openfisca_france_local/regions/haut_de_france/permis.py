@@ -1,14 +1,9 @@
-from numpy import select
-from numpy.core.defchararray import startswith
 from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
 
 from openfisca_france.entities import Individu
-from openfisca_france.model.base import TypesActivite, TypesStatutMarital
-from openfisca_france.model.prestations.aide_permis_demandeur_emploi import \
-    aide_permis_demandeur_emploi_eligibilite_individu
+from openfisca_france.model.base import TypesStatutMarital
 from openfisca_france.model.base import max_
-from openfisca_france.model.revenus.activite.salarie import TypesContratDeTravailDuree
 
 class haut_de_france_aide_permis_eligibilite(Variable):
     value_type = bool
