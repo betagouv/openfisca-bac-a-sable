@@ -1,0 +1,19 @@
+- period: 2021-03
+  input:
+    age: [31, 18, 21, 21, 21, 21]
+    depcom: [60, 95, 60, 60, 60, 60]
+    statut_marital: [celibataire, celibataire, celibataire, marie, marie, celibataire]
+    contrat_de_travail_duree: [cdd, cdd, cdd, cdd, cdd, cdi]
+    rfr:
+      2020:
+        [1, 1, 1, 50000, 32000, 1]
+      2021:
+        [1, 1, 1, 50000, 32000, 1]
+    nbptr:
+      2020:
+        [1, 1, 1, 2, 2, 1]
+      2021:
+        [1, 1, 1, 2, 2, 1]
+  output:
+    haut_de_france_aide_permis: [0, 0, 1000, 0, 1000, 0]
+
