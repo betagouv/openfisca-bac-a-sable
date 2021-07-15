@@ -1,0 +1,25 @@
+- period: 2020-10
+  input:
+    depcom: [28000, 28000, 28000, 28000, 28000]
+    age: [22, 23, 18, 25, 5]
+    salaire_net: [500, 900, 400, 1200, 500]
+    rsa: [0, 100, 0, 300, 0]
+  output:
+    eure_et_loir_eligibilite_transport_social: [true, true, true, true, false ]
+
+
+- period: 2020-10
+  input:
+    depcom: [28000, 28000, 28000, 28000]
+    age: [22, 18, 25, 5]
+    salaire_net: [500, 400, 1200, 200]
+  output:
+    eure_et_loir_eligibilite_faj: [true, true, false, false ]
+
+
+- period: 2020-10
+  input:
+    depcom: [28000, 31300, 28000]
+    rsa: [150, 100, 0]
+  output:
+    eure_et_loir_eligibilite_transport_social: [true, false, false]

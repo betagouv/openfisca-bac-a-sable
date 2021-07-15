@@ -1,0 +1,38 @@
+montants:
+  montant_formation_3_mois_ou_plus:
+    values:
+      2020-01-01:
+        value: 500
+  montant_cdd_3_a_6_mois:
+    values:
+      2020-01-01:
+        value: 400
+  montant_cdd_6_mois_ou_plus:
+    values:
+      2020-01-01:
+        value: 500
+  montant_cdi_temps_plein:
+    values:
+      2020-01-01:
+        value: 600
+  montant_cdi_temps_partiel:
+    values:
+      2020-01-01:
+        value: 300
+  montant_creation_reprise_entreprise:
+    values:
+      2020-01-01:
+        value: 700
+durees:
+  duree_minimum_formation:
+    values:
+      2020-01-01:
+        value: 3
+  duree_minimum_cdd_palier1:
+    values:
+      2020-01-01:
+        value: 3
+  duree_minimum_cdd_palier2:
+    values:
+      2020-01-01:
+        value: 6

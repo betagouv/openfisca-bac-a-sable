@@ -1,6 +1,94 @@
-- period: 2019-01
+- name: Adefip - Formation
+  period: 2021-01
   input:
-    rsa: [0, 410.40, 0, 410.40]
-    eure_et_loir_eligibilite_residence: [true, true, false, false]
+    depcom: 28000
+    rsa: 200
+    cer_ou_ppae: true
+    adefip:
+      2020-12: 0
+      2020-11: 0
+      2020-10: 0
+      2020-09: 0
+      2020-08: 0
+      2020-07: 0
+      2020-06: 0
+      2020-05: 0
+      2020-04: 0
+      2020-03: 0
+      2020-02: 0
+      2020-01: 0
+    formation: true
+    duree_contrat_ou_formation: 3
   output:
-    eure_et_loir_eligibilite_adefip: [false, true, false, false]
+    adefip: 500
+
+- name: Adefip - CDD
+  period: 2021-01
+  input:
+    depcom: [28000, 28000]
+    rsa: [200, 200]
+    cer_ou_ppae: [true, true]
+    adefip:
+      2020-12: [0, 0]
+      2020-11: [0, 0]
+      2020-10: [0, 0]
+      2020-09: [0, 0]
+      2020-08: [0, 0]
+      2020-07: [0, 0]
+      2020-06: [0, 0]
+      2020-05: [0, 0]
+      2020-04: [0, 0]
+      2020-03: [0, 0]
+      2020-02: [0, 0]
+      2020-01: [0, 0]
+    contrat_de_travail_duree: [cdd, cdd]
+    duree_contrat_ou_formation: [6, 7]
+  output:
+    adefip: [400, 500]
+
+- name: Adefip - CDI
+  period: 2021-01
+  input:
+    depcom: [28000, 28000]
+    rsa: [200, 200]
+    cer_ou_ppae: [true, true]
+    adefip:
+      2020-12: [0, 0]
+      2020-11: [0, 0]
+      2020-10: [0, 0]
+      2020-09: [0, 0]
+      2020-08: [0, 0]
+      2020-07: [0, 0]
+      2020-06: [0, 0]
+      2020-05: [0, 0]
+      2020-04: [0, 0]
+      2020-03: [0, 0]
+      2020-02: [0, 0]
+      2020-01: [0, 0]
+    contrat_de_travail_duree: [cdi, cdi]
+    contrat_de_travail: [temps_plein, temps_partiel]
+  output:
+    adefip: [600, 300]
+
+- name: Adefip - Entreprise
+  period: 2021-01
+  input:
+    depcom: 28000
+    rsa: 200
+    cer_ou_ppae: true
+    adefip:
+      2020-12: 0
+      2020-11: 0
+      2020-10: 0
+      2020-09: 0
+      2020-08: 0
+      2020-07: 0
+      2020-06: 0
+      2020-05: 0
+      2020-04: 0
+      2020-03: 0
+      2020-02: 0
+      2020-01: 0
+    creation_ou_reprise_entreprise: true
+  output:
+    adefip: 700
