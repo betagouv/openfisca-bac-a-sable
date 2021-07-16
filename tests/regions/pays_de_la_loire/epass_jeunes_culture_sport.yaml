@@ -1,0 +1,14 @@
+- period: 2021-07
+  input:
+    activite: etudiant
+    depcom: '49244'
+  output:
+    pays_de_la_loire_epass_jeunes_culture_sport: 200
+
+- period: 2021-07
+  input:
+    age: [15, 19, 32]
+    activite: [chomeur, chomeur, chomeur]
+    depcom: ['49244', '33012', '49244']
+  output:
+    pays_de_la_loire_epass_jeunes_culture_sport: [200, 0, 0]
